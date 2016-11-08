@@ -1,0 +1,189 @@
+<html>
+	
+	<head>
+		<link rel="stylesheet" href="style.css" type="text/css"></link>
+		<script src="function.js"></script>
+	</head>
+	
+	<title>The Seed</title>
+	
+	<body onload="init()">
+	
+		<button class="title active" disabled>The Seed</button>
+		<img class="logout" align="right" src="assets/logout.png" id="logoutIcon" onClick="switchPanel(event, 'login')"></img>
+		<br><hr>
+		
+		<!--login screen-->
+		<div class="pageContent" id="login">
+			
+			<table class="centered">
+				
+				<td colspan="3"><img src="assets/seed_logo_right_padding.png"></img></td>
+				<tr>
+				</tr>
+				<tr>
+					<td>Username:</td>
+					<td><input class="login" type="text" name="usr" id="loginUsr"></input></td>
+					<td><div class="errorText" id="errorUsr">*Field Required*</div></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input class="login" type="password" name="pass" id="loginPass"></input></td>
+					<td><div class="errorText" id="errorPass">*Field Required*</div></td>
+				</tr>
+				<tr>
+					<td colspan="3"><button class="menu" onClick="checkLogin()">Login</button></td>
+				</tr>
+				
+				<tr>
+					<td colspan="3"><button class="menu" onClick="switchPanel(event, 'createAccount')">Create Account</button>
+					<button class="menu" onClick="switchPanel(event, 'forgotPass')">Forgot Password</button></td>
+				</tr>
+				
+			</table>
+			
+		</div>
+		
+		<!--create account screen-->
+		<div class="pageContent" id="createAccount">
+			
+			<table class="centered">
+				
+				<tr>
+					<td class="backCell"><button class="back" onClick="switchPanel(event, 'login')">< Back</button></td>
+					<td colspan="2" class="longCell">Account Creation</td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td><input id="createEmail" class="login" type="text" name="email"></input></td>
+					<td><div class="errorText" id="errorCreateEmail">*Field Required*</div></td>
+				</tr>
+				<tr>
+					<td>Username:</td>
+					<td><input id="createUsr" class="login" type="text" name="usr"></input></td>
+					<td><div class="errorText" id="errorCreateUsr">*Field Required*</div></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input id="createPass" class="login" type="password" name="pass"></input></td>
+					<td><div class="errorText" id="errorCreatePass">*Field Required*</div></td>
+				</tr>
+				<tr>
+					<td>Confirm Password:</td>
+					<td><input id="createConf" class="login" type="password" name="confPass"></input></td>
+					<td><div class="errorText" id="errorCreateConf">*Passwords must match*</div></td>
+				</tr>
+				<tr>
+					<td colspan="2"><button class="menu" onClick="checkAccountCreate()">Submit</button></td>
+				</tr>
+				
+			</table>
+			
+		</div>
+		
+		<!--forgot password screen-->
+		<div class="pageContent" id="forgotPass">
+			
+			<table class="centered">
+				
+				<tr>
+					<td class="backCell"><button class="back" onClick="switchPanel(event, 'login')">< Back</button></td>
+					<td class="longCell">Forgot Password</td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input id="forgotPass" class="login" type="password" name="pass"></input></td>
+					<td><div class="errorText" id="errorForgotPass">*Field Required*</div></td>
+				</tr>
+				<tr>
+					<td>Confirm Password:</td>
+					<td><input id="forgotConf" class="login" type="password" name="pass"></input></td>
+					<td><div class="errorText" id="errorForgotConf">*Passwords must match*</div></td>
+				</tr>
+				<tr>
+					<td colspan="2"><button class="menu" onClick="checkForgotPassword();">Submit</button></td>
+				</tr>
+				
+			</table>
+			
+		</div>
+		
+		<!--main screen-->
+		<div class="pageContent" id="main">
+			
+			<table class="mainTable">
+				
+				<tr>
+					<td valign="top" class="sideBar"><button class="mainNav" id="uploadButton" onClick="switchMainPanel(event, 'uploadPanel')">Upload</button><br>
+					<button class="mainNav" id="viewButton" onClick="switchMainPanel(event, 'viewPanel')">View</button><br>
+					<button class="mainNav" id="outputButton" onClick="switchMainPanel(event, 'outputPanel')">Output</button></td>
+					
+					
+					<td valign="top" class="mainBody">
+						
+						<!--upload panel-->
+						<div class="mainPageContent" id="uploadPanel">
+							
+							<table class="centered">
+								
+								<tr>
+									
+									<td colspan="2"><div class="title">Upload</div></td>
+									
+								</tr>
+								<tr>
+									
+									<td colspan="2" valign="center" class="dragAndDrop">
+										+
+									</td>
+									
+								</tr>
+								
+								<tr>
+									
+									<td>
+										<input class="fileBrows btn menu" type="file" id="fileDrop" name="fileDrop[]" multiple="multiple"></input>
+									</td>
+									<td><button class="menu">Submit</button></td>
+									
+								</tr>
+								
+							</table>
+							
+						</div>
+						
+						<!--view panel-->
+						<div class="mainPageContent" id="viewPanel">
+							
+							<div class="title">Historical Data</div>
+							<canvas></canvas>
+							
+						</div>
+						
+						<!--output panel-->
+						<div class="mainPageContent" id="outputPanel">
+							
+							<table class="centered">
+								
+								<tr>
+									
+									<td><div class="title">Output</div></td>
+									
+								</tr>
+								
+							</table>
+							
+						</div>
+						
+					</td>
+					
+				</tr>
+				
+			</table>
+			
+		</div>
+		
+		<div class="footer">Prototype developed by Team Papaya, copyright 2016</div>
+	</body>
+	
+</html>

@@ -1,0 +1,161 @@
+html {
+	width: 100%;
+}
+
+body {
+	
+	width: 100%;
+	background: linear-gradient(135deg, #99ff99, #f7fff7, #99ff99);
+	font-family: monospace;
+	font-size: 26;
+	
+}
+
+.title {
+	
+	font-size: 32;
+	border: 0;
+	background: transparent;
+	padding: 0px 3px;
+	
+}
+
+.footer {
+	
+	font-size: 12px;
+	margin-top: 220px;
+	text-align: right;
+	padding: 0px 10px;
+	
+}
+
+.pageContent {
+	
+	width: 100%;
+	height: 47%;
+
+}
+
+.errorText {
+	
+	color: red;
+	
+}
+
+.fileBrows {
+	color: green;
+}
+
+.fileBrows input.upload {
+	
+	
+	
+}
+
+/*button styles*/
+button.mainNav {
+	
+	color: black;
+	font-size: 26;
+	border: 0;
+	background: transparent;
+	padding: 10px 5px;
+	
+}
+
+button:hover {
+	
+	-webkit-transition-duration: 0.1s;
+	color: blue;
+	
+}
+
+button.back {
+	
+	font-size: 14;
+	border: 0;
+	background: transparent;
+	
+}
+
+button.menu {
+	
+	font-size: 14px;
+	border-radius: 10px;
+	background-color: #99ff99;
+	border-color: #99ff99;
+	
+}
+
+/*table/cell styles*/
+table.centered {
+	
+	background: #F8F8F8;
+	text-align: center;
+	margin: 0 auto;
+	width: 40%;
+	height: 30%;
+	border-radius: 32px;
+	
+}
+
+td.backCell {
+	
+	text-align: left;
+	
+}
+
+td.longCell {
+	
+	width: 90%;
+	text-align: left;
+	
+}
+
+table.mainTable {
+	
+	width: 100%;
+	height: 47%;
+	
+}
+
+td.sideBar {
+	
+	width: 10%;
+	background-color: transparent;
+		
+}
+
+td.mainBody {
+	
+	width: 90%;
+	padding: 0px 10px;
+	
+}
+
+td.dragAndDrop {
+	
+	border: 1 solid black;
+	width: 95%;
+	height: 180;
+	text-align: center;
+	border-radius: 5px;
+	
+}
+
+/*graphic classes*/
+
+img.logout {
+	
+	width: 50px;
+	height: 50px;
+	padding: 0px 5px;
+	
+}
+
+input.login {
+	
+	width: 100%;
+	text-align: center;
+	
+}
