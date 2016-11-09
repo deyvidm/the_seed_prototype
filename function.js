@@ -94,7 +94,6 @@ function checkLogin() {
 }
 
 function checkAccountCreate() {
-	
 	//reset errors
 	document.getElementById("errorCreateEmail").style.visibility = "hidden";
 	document.getElementById("errorCreateUsr").style.visibility = "hidden";
@@ -108,7 +107,7 @@ function checkAccountCreate() {
 	
 	if (!emailStor.value) document.getElementById("errorCreateEmail").style.visibility = "visible";
 	else if (!usrStor.value) document.getElementById("errorCreateUsr").style.visibility = "visible";
-	else if (!passStor.value) 	document.getElementById("errorCreatePass").style.visibility = "visible";
+	else if (!passStor.value) document.getElementById("errorCreatePass").style.visibility = "visible";
 	else if (passStor.value != confStor.value) document.getElementById("errorCreateConf").style.visibility = "visible";
 	else switchPanel(event, "login");
 	
@@ -120,7 +119,7 @@ function checkForgotPassword() {
 	document.getElementById("errorForgotPass").style.visibility = "hidden";
 	document.getElementById("errorForgotConf").style.visibility = "hidden";
 	
-	var passStor = document.getElementById("forgotPass");
+	var passStor = document.getElementById("forgotPass_field");
 	var confStor = document.getElementById("forgotConf");
 	
 	//if (!passStor.value) document.getElementById("errorForgotPass").style.visibility = "visible";
