@@ -9,7 +9,7 @@
 	
 	<body onload="init()">
 	
-		<button class="title active" disabled>The Seed</button>
+		<div class="title" disabled>The Seed</button>
 		<img class="logout" align="right" src="assets/logout.png" id="logoutIcon" onClick="switchPanel(event, 'login')"></img>
 		<br><hr>
 		
@@ -121,6 +121,13 @@
 					
 					<td valign="top" class="mainBody">
 						
+						<!--blank panel-->
+						<div class="mainPageContent" id="welcome">
+							
+							<div class="title">Welcome to the Garden Fresh Box Savings System</div>
+							
+						</div>
+						
 						<!--upload panel-->
 						<div class="mainPageContent" id="uploadPanel">
 							
@@ -166,9 +173,47 @@
 							<table class="centered">
 								
 								<tr>
-									
-									<td><div class="title">Output</div></td>
-									
+									<td colspan="3"><div class="title">Output</div></td>
+								</tr>
+								<tr>
+									<td class="outputLeft"><u>Produce</u></td>
+									<td><u>Distributor</u></td>
+									<td class="outputRight"><u>Pricing</u></td>
+								</tr>
+								<tr>
+									<td class="outputLeft">Potatos</td>
+									<td>No Frills</td>
+									<td class="outputRight">$2.99</td>
+								</tr>
+								<tr>
+									<td class="outputLeft">Potatos</td>
+									<td>Garden Fresh Box</td>
+									<td class="outputRight">$1.99</td>
+								</tr>
+								<tr>
+									<td class="outputLeft">Tomatoes</td>
+									<td>No Frills</td>
+									<td class="outputRight">$1.99</td>
+								</tr>
+								<tr>
+									<td class="outputLeft">Tomatoes</td>
+									<td>Garden Fresh Box</td>
+									<td class="outputRight">$0.49</td>
+								</tr>
+								<tr>
+									<td><u>Produce</u></td>
+									<td></td>
+									<td><u>Savings</u></td>
+								</tr>
+								<tr>
+									<td>Potatos</td>
+									<td></td>
+									<td>$1.00</td>
+								</tr>
+								<tr>
+									<td>Tomatoes</td>
+									<td></td>
+									<td>$1.50</td>
 								</tr>
 								
 							</table>

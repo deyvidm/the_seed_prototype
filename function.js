@@ -27,9 +27,11 @@ function switchPanel(event, panelID) {
 		document.getElementById("logoutIcon").style.visibility = "visible";
 		doc = document.getElementsByClassName("mainPageContent");
 		for (i = 0; i < doc.length; i++) doc[i].style.display = "none";
+		//reset button colors
 		document.getElementById("uploadButton").style.color = "black";
 		document.getElementById("viewButton").style.color = "black";
 		document.getElementById("outputButton").style.color = "black";
+		document.getElementById("welcome").style.display = "visible";
 	}
 	if (panelID == "login") {
 		document.getElementById("logoutIcon").style.visibility = "hidden";
