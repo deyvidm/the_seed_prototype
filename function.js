@@ -1,6 +1,7 @@
 function init() {
 	
 	switchPanel(event, "login");
+	//hide all errors
 	document.getElementById("logoutIcon").style.visibility = "hidden";
 	document.getElementById("errorUsr").style.visibility = "hidden";
 	document.getElementById("errorPass").style.visibility = "hidden";
@@ -18,12 +19,14 @@ function switchPanel(event, panelID) {
 	var i;
 	var doc = document.getElementsByClassName("pageContent");
 	
+	//hide all pageContent
 	for (i = 0; i < doc.length; i++) doc[i].style.display = "none";
 	
+	//show appropriate display
 	document.getElementById(panelID).style.display = "block";
 	
-	//logout visibility
 	if (panelID == "main") {
+		//show logout button
 		document.getElementById("logoutIcon").style.visibility = "visible";
 		doc = document.getElementsByClassName("mainPageContent");
 		for (i = 0; i < doc.length; i++) doc[i].style.display = "none";
@@ -31,20 +34,24 @@ function switchPanel(event, panelID) {
 		document.getElementById("uploadButton").style.color = "black";
 		document.getElementById("viewButton").style.color = "black";
 		document.getElementById("outputButton").style.color = "black";
-		document.getElementById("welcome").style.display = "visible";
 	}
+	
 	if (panelID == "login") {
+		//hide logout
 		document.getElementById("logoutIcon").style.visibility = "hidden";
+		//reset text fields
 		document.getElementById("loginUsr").value = "";
 		document.getElementById("loginPass").value = "";
 	}
 	if (panelID == "createAccount") {
+		//reset text fields
 		document.getElementById("createEmail").value = "";
 		document.getElementById("createUsr").value = "";
 		document.getElementById("createPass").value = "";
 		document.getElementById("createConf").value = "";
 	}
 	if (panelID == "forgotPassword") {
+		//reset text fields
 		document.getElementById("forgotPass").value = "";
 		document.getElementById("forgotConf").value = "";
 	}
