@@ -48,21 +48,21 @@ body {
 }
 
 /*button styles*/
+
+button:hover:enabled {
+	
+	-webkit-transition-duration: 0.1s;
+	color: green;
+	
+}
+
 button.mainNav {
 	
 	color: black;
 	font-size: 26;
 	background: transparent;
-	text-decoration: underline;
 	border-color: transparent;
 	padding: 10px 5px;
-	
-}
-
-button:hover {
-	
-	-webkit-transition-duration: 0.1s;
-	color: blue;
 	
 }
 
@@ -95,6 +95,12 @@ table.centered {
 	
 }
 
+table.output {
+	
+	border: 1;
+	
+}
+
 td.backCell {
 	
 	text-align: left;
@@ -111,13 +117,16 @@ td.longCell {
 table.mainTable {
 	
 	width: 100%;
-	height: 47%;
+	height: 150%;
 	
 }
 
 td.sideBar {
 	
 	width: 10%;
+	height: 100%;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
 	background-color: transparent;
 		
 }
@@ -125,6 +134,10 @@ td.sideBar {
 td.mainBody {
 	
 	width: 90%;
+	height: 100%;
+	border-left: 1px solid black;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
 	padding: 0px 10px;
 	
 }
