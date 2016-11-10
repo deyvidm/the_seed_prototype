@@ -134,15 +134,28 @@ function initChart() {
 	
 	var c = document.getElementById("historyChart");
 	
-	Plotly.plot (c, [{
-				 x: ["No-Frills", "Metro", "Loblaws", "Garden-Fresh-Box"],
-				 y: [3, 4, 2.5, 2] }], {
-				 margin: {t: 1} } );
+	var t1 = {x: ["No-Frills", "Metro", "Loblaws", "Garden-Fresh-Box"],
+				 y: [3, 4, 2.5, 2],
+				 name: "Potatoes",
+				 type: 'scatter'};
+	var t2 = {x: ["No-Frills", "Metro", "Loblaws", "Garden-Fresh-Box"],
+				 y: [2, 2, 1.5, 0.5],
+				 name: "Tomatoes",
+				 type: 'scatter'};
 	
-	Plotly.plot (c, [{
-				 x: ["No-Frills", "Metro", "Loblaws", "Garden-Fresh-Box"],
-				 y: [2, 2, 1.5, 0.5] }], {
-				 margin: {t: 1} } );
+	var data = [t1, t2];
 	
+	var layout = {
+		xaxis: {
+			title: "Distributor"
+		},
+		yaxis: {
+			title: "Price ($)",
+			tick0: 0,
+			dtick: 0.5
+		}
+	};
+	
+	Plotly.newPlot(c, data, layout);
 	
 }
