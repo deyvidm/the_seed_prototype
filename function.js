@@ -11,6 +11,8 @@ function init() {
 	document.getElementById("errorCreateConf").style.visibility = "hidden";
 	document.getElementById("errorForgotPass").style.visibility = "hidden";
 	document.getElementById("errorForgotConf").style.visibility = "hidden";
+	//setup hard-coded chart
+	initChart();
 	
 }
 
@@ -125,5 +127,22 @@ function checkForgotPassword() {
 	//if (!passStor.value) document.getElementById("errorForgotPass").style.visibility = "visible";
 	if (passStor.value != confStor.value) document.getElementById("errorForgotConf").style.visibility = "visible";
 	else switchPanel(event, "login");
+	
+}
+
+function initChart() {
+	
+	var c = document.getElementById("historyChart");
+	
+	Plotly.plot (c, [{
+				 x: ["No-Frills", "Metro", "Loblaws", "Garden-Fresh-Box"],
+				 y: [3, 4, 2.5, 2] }], {
+				 margin: {t: 1} } );
+	
+	Plotly.plot (c, [{
+				 x: ["No-Frills", "Metro", "Loblaws", "Garden-Fresh-Box"],
+				 y: [2, 2, 1.5, 0.5] }], {
+				 margin: {t: 1} } );
+	
 	
 }

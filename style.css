@@ -47,6 +47,14 @@ body {
 	color: green;
 }
 
+.historyStyle {
+	
+	width: 400px;
+	height: 300px;
+	padding: 0px 0px;
+	
+}
+
 /*button styles*/
 
 button:hover:enabled {
@@ -60,8 +68,9 @@ button.mainNav {
 	
 	color: black;
 	font-size: 26;
+	width: 100%;
 	background: transparent;
-	border-color: transparent;
+	border-color: grey;
 	padding: 10px 5px;
 	
 }
