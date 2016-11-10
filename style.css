@@ -24,7 +24,7 @@ body {
 .footer {
 	
 	font-size: 12px;
-	margin-top: 220px;
+	margin-top: 200px;
 	text-align: right;
 	padding: 0px 10px;
 	
@@ -49,7 +49,7 @@ body {
 
 .historyStyle {
 	
-	width: 400px;
+	width: 800px;
 	height: 300px;
 	background-color: transparent;
 	padding: 0px 0px;
