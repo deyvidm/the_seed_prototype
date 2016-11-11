@@ -21,6 +21,14 @@ body {
 	
 }
 
+.successText {
+	
+	font-size: 20;
+	text-align: center;
+	padding: 10px 0px;
+	
+}
+
 .footer {
 	
 	font-size: 12px;

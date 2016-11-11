@@ -135,8 +135,15 @@
 								</tr>
 								<tr>
 									
-									<td colspan="2" valign="center" class="dragAndDrop">
-										+
+									<td colspan="2" style="text-align: left;">Files to Upload</td>
+									
+								</tr>
+								<tr>
+									
+									<td colspan="2" class="dragAndDrop">
+										<div valign="center" id="fileList">
+											+
+										</div>
 									</td>
 									
 								</tr>
@@ -144,13 +151,17 @@
 								<tr>
 									
 									<td>
-										<input class="fileBrows btn menu" type="file" id="fileDrop" name="fileDrop[]" multiple="multiple"></input>
+										<!--file upload button-->
+										<input class="fileBrows" type="file" multiple size="100" id="fileUpload" onchange="updateUpload();">
+											
+										</input>
 									</td>
-									<td><button class="menu">Submit</button></td>
+									<td><button class="menu" onClick="document.getElementById('successUpload').style.visibility = 'visible';">Submit</button></td>
 									
 								</tr>
 								
 							</table>
+							<div id="successUpload" class="successText">Files uploaded successfully</div>
 							
 						</div>
 						

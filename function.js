@@ -1,3 +1,5 @@
+var fileTotal = 0;
+
 function init() {
 	
 	switchPanel(event, "login");
@@ -75,9 +77,18 @@ function switchMainPanel(event, panelID) {
 	
 	document.getElementById(panelID).style.display = "block";
 	
+	//set button colors
 	if (panelID == "uploadPanel") document.getElementById("uploadButton").style.color = "red";
 	if (panelID == "viewPanel") document.getElementById("viewButton").style.color = "red";
 	if (panelID == "outputPanel") document.getElementById("outputButton").style.color = "red";
+	
+	if (panelID == "uploadPanel") {
+		//hide success message
+		document.getElementById("successUpload").style.visibility = "hidden";
+		//reset file uploader
+		fileTotal = 0;
+		document.getElementById("fileList").innerHTML = "+";
+	}
 	
 }
 
@@ -160,4 +171,24 @@ function initChart() {
 	
 	Plotly.newPlot(c, data, layout);
 	
+}
+
+function updateUpload() {
+	
+	var doc = document.getElementById("fileUpload");
+	var txt = "";
+	
+	var fl = document.getElementById("fileList");
+	
+	for (var i = 0; i < doc.files.length; i++) {
+		
+		txt = "<br><strong>" + (i+1+fileTotal) + ". </strong>";
+		var file = doc.files[i];
+		if ('name' in file) txt += file.name;
+		if ('size' in file) txt += "(" + file.size + " bytes)";
+		fl.innerHTML += txt;
+		
+	}
+	document.getElementById("fileList").innerHTML = fl.innerHTML;
+	fileTotal += i;
 }
