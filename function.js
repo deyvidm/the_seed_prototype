@@ -146,6 +146,7 @@ function initChart() {
 	var data = [t1, t2];
 	
 	var layout = {
+		title: "Historial Data",
 		xaxis: {
 			title: "Distributor"
 		},

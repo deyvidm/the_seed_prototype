@@ -49,10 +49,17 @@ body {
 
 .historyStyle {
 	
-	width: 800px;
-	height: 300px;
+	width: 1600px;
+	height: 400px;
 	background-color: transparent;
 	padding: 0px 0px;
+	
+}
+
+.dropdown {
+	
+	margin-top: 5px;
+	background-color: #99ff99;
 	
 }
 
@@ -61,7 +68,7 @@ body {
 button:hover:enabled {
 	
 	-webkit-transition-duration: 0.1s;
-	color: green;
+	color: blue;
 	
 }
 
@@ -99,6 +106,7 @@ table.centered {
 	background: #F8F8F8;
 	text-align: center;
 	margin: 0 auto;
+	margin-top: 50;
 	width: 40%;
 	height: 30%;
 	border-radius: 32px;

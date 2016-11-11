@@ -157,8 +157,33 @@
 						<!--view panel-->
 						<div class="mainPageContent" id="viewPanel">
 							
-							<div class="title">Historical Data</div>
-							<div class="historyStyle" id="historyChart"></div>
+							<div class="historyStyle title" id="historyChart"></div>
+							From: 
+							<select id="dropDownStart" class="dropdown">
+								
+								<option onClick="setStart(1)">September</option>
+								<option onClick="setStart(2)">October</option>
+								<option onClick="setStart(3)">November</option>
+								
+							</select>
+							<select class="dropdown">
+								
+								<option>2016</option>
+								
+							</select><br>
+							To: 
+							<select id="downDownEnd" class="dropdown">
+								
+								<option onClick="setEnd(1)">September</option>
+								<option onClick="setEnd(2)">October</option>
+								<option onClick="setEnd(3)">November</option>
+								
+							</select>
+							<select class="dropdown">
+								
+								<option>2016</option>
+								
+							</select>
 							
 						</div>
 						
