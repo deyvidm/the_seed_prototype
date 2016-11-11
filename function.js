@@ -94,6 +94,8 @@ function switchMainPanel(event, panelID) {
 
 function checkLogin() {
 	
+    var isValid = true;
+
 	//reset errors
 	document.getElementById("errorUsr").style.visibility = "hidden";
 	document.getElementById("errorPass").style.visibility = "hidden";
@@ -101,13 +103,26 @@ function checkLogin() {
 	var usrStor = document.getElementById("loginUsr");
 	var passStor = document.getElementById("loginPass");
 	
-	if (!usrStor.value) document.getElementById("errorUsr").style.visibility = "visible";
-	else if (!passStor.value) document.getElementById("errorPass").style.visibility = "visible";
-	else switchPanel(event, "main");
+	if (!usrStor.value) {
+	    document.getElementById("errorUsr").style.visibility = "visible";
+	    isValid = false;
+	}
+
+	if (!passStor.value) {
+	    document.getElementById("errorPass").style.visibility = "visible";
+	    isValid = false;
+	}
+
+
+	if (isValid) switchPanel(event, "main");
 	
 }
 
 function checkAccountCreate() {
+
+    var isValid = true;
+    var re = /\S+@\S+\.\S+/;
+
 	//reset errors
 	document.getElementById("errorCreateEmail").style.visibility = "hidden";
 	document.getElementById("errorCreateUsr").style.visibility = "hidden";
@@ -119,27 +134,91 @@ function checkAccountCreate() {
 	var passStor = document.getElementById("createPass");
 	var confStor = document.getElementById("createConf");
 	
-	if (!emailStor.value) document.getElementById("errorCreateEmail").style.visibility = "visible";
-	else if (!usrStor.value) document.getElementById("errorCreateUsr").style.visibility = "visible";
-	else if (!passStor.value) document.getElementById("errorCreatePass").style.visibility = "visible";
-	else if (passStor.value != confStor.value) document.getElementById("errorCreateConf").style.visibility = "visible";
-	else switchPanel(event, "login");
+	if (!emailStor.value) {
+	    document.getElementById("errorCreateEmail").textContent = "*Field Required*";
+	    document.getElementById("errorCreateEmail").style.visibility = "visible";
+	    isValid = false;
+	}
+	else if (!re.test(emailStor.value)) {
+	    document.getElementById("errorCreateEmail").textContent = "*Invalid Email*";
+	    document.getElementById("errorCreateEmail").style.visibility = "visible";
+	    isValid = false;
+	}
+
+	if (!usrStor.value) {
+	    document.getElementById("errorCreateUsr").style.visibility = "visible";
+	    isValid = false;
+	}
+
+	if (!passStor.value) {
+	    document.getElementById("errorCreatePass").style.visibility = "visible";
+	    isValid = false;
+	}
+
+	if (passStor.value != confStor.value) {
+	    document.getElementById("errorCreateConf").style.visibility = "visible";
+	    isValid = false;
+	}
+
+	if (isValid) switchPanel(event, "login");
 	
 }
 
 function checkForgotPassword() {
 	
+    var isValid = true;
+    var re = /\S+@\S+\.\S+/;
+
 	//reset errors
 	document.getElementById("errorForgotPass").style.visibility = "hidden";
 	document.getElementById("errorForgotConf").style.visibility = "hidden";
 	
 	var passStor = document.getElementById("forgotPass_field");
 	var confStor = document.getElementById("forgotConf");
+    var emailStor = document.getElementById("forgotPassEmail")
 	
+	if (!emailStor.value) {
+	    document.getElementById("errorPassEmail").textContent = "*Field Required*";
+	    document.getElementById("errorPassEmail").style.visibility = "visible";
+	    isValid = false;
+	}
+	else if (!re.test(emailStor.value)) {
+	    document.getElementById("errorPassEmail").textContent = "*Invalid Email*";
+	    document.getElementById("errorPassEmail").style.visibility = "visible";
+	    isValid = false;
+	}
+
 	//if (!passStor.value) document.getElementById("errorForgotPass").style.visibility = "visible";
-	if (passStor.value != confStor.value) document.getElementById("errorForgotConf").style.visibility = "visible";
-	else switchPanel(event, "login");
+	if (passStor.value != confStor.value) {
+	    document.getElementById("errorForgotConf").style.visibility = "visible";
+	    isValid = false;
+	}
+
+	if (isValid) switchPanel(event, "login");
 	
+}
+
+function checkInputFiles() {
+    var uploader = document.getElementById("fileUpload");
+
+    if (uploader.files.length == 0) {
+        document.getElementById("successUpload").textContent = "No files selected";
+        document.getElementById('successUpload').style.visibility = 'visible';
+    }
+
+    for (var i = 0; i < uploader.files.length; i++) {
+        var extension = uploader.files[i].name.split('.').pop();
+
+        if (extension == "xls" || extension == "xlsx" || extension == "csv" || extension == "txt") {
+            document.getElementById("successUpload").textContent = "Files uploaded successfully";
+            document.getElementById('successUpload').style.visibility = 'visible';
+        }
+        else {
+            document.getElementById("successUpload").textContent = "Invalid file format: " + extension;
+            document.getElementById('successUpload').style.visibility = 'visible';
+            break;
+        }
+    }
 }
 
 function initChart() {
@@ -181,13 +260,11 @@ function updateUpload() {
 	var fl = document.getElementById("fileList");
 	
 	for (var i = 0; i < doc.files.length; i++) {
-		
 		txt = "<br><strong>" + (i+1+fileTotal) + ". </strong>";
 		var file = doc.files[i];
 		if ('name' in file) txt += file.name;
 		if ('size' in file) txt += "(" + file.size + " bytes)";
 		fl.innerHTML += txt;
-		
 	}
 	document.getElementById("fileList").innerHTML = fl.innerHTML;
 	fileTotal += i;

@@ -92,6 +92,11 @@
 					<td class="longCell">Forgot Password</td>
 				</tr>
 				<tr>
+					<td>Email:</td>
+					<td><input id="forgotPassEmail" class="login" type="text" name="email"></input></td>
+					<td><div class="errorText" id="errorPassEmail">*Field Required*</div></td>
+				</tr>
+				<tr>
 					<td>Password:</td>
 					<td><input id="forgotPass_field" class="login" type="password" name="pass"></input></td>
 					<td><div class="errorText" id="errorForgotPass">*Field Required*</div></td>
@@ -156,7 +161,7 @@
 											
 										</input>
 									</td>
-									<td><button class="menu" onClick="document.getElementById('successUpload').style.visibility = 'visible';">Submit</button></td>
+									<td><button class="menu" onClick="checkInputFiles();">Submit</button></td>
 									
 								</tr>
 								
