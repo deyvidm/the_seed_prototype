@@ -58,10 +58,19 @@ body {
 
 .dropdown {
 	
+	height: 25px;
 	margin-top: 5px;
 	background-color: #99ff99;
 	border-radius: 10px;
 	
+}
+
+.monthdrop {
+	width: 100px;
+}
+
+.yeardrop {
+	width: 60px;
 }
 
 /*button styles*/
@@ -163,9 +172,9 @@ td.mainBody {
 
 td.dragAndDrop {
 	
-	border: 1 solid black;
-	width: 95%;
+	width: 65%;
 	height: 180;
+	border: 1px solid black;
 	text-align: center;
 	border-radius: 5px;
 	

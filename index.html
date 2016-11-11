@@ -158,32 +158,43 @@
 						<div class="mainPageContent" id="viewPanel">
 							
 							<div class="historyStyle title" id="historyChart"></div>
-							From: 
-							<select id="dropDownStart" class="dropdown">
+							<table>
 								
-								<option onClick="setStart(1)">September</option>
-								<option onClick="setStart(2)">October</option>
-								<option onClick="setStart(3)">November</option>
+								<tr>
+									
+									<td>From: </td>
+									<td>
+										<select id="dropDownStart" class="dropdown monthdrop">
+									
+											<option onClick="setStart(1)">September</option>
+											<option onClick="setStart(2)">October</option>
+											<option onClick="setStart(3)">November</option>
 								
-							</select>
-							<select class="dropdown">
+										</select>
+									</td>
+									<td><select class="dropdown yeardrop"><option>2016</option></td></select>
+									
+								</tr>
+								<tr>
+									
+									<td>To: </td>
+									<td>
+										<select id="downDownEnd" class="dropdown monthdrop">
 								
-								<option>2016</option>
+											<option onClick="setEnd(1)">September</option>
+											<option onClick="setEnd(2)">October</option>
+											<option onClick="setEnd(3)">November</option>
+											
+										</select>
+									</td>
+									<td><select class="dropdown yeardrop"><option>2016</option></select></td>
+									
+								</tr>
 								
-							</select><br>
-							To: 
-							<select id="downDownEnd" class="dropdown">
+							</table>
 								
-								<option onClick="setEnd(1)">September</option>
-								<option onClick="setEnd(2)">October</option>
-								<option onClick="setEnd(3)">November</option>
-								
-							</select>
-							<select class="dropdown">
-								
-								<option>2016</option>
-								
-							</select>
+							
+							
 							
 						</div>
 						
