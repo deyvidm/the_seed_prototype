@@ -2,15 +2,8 @@ function init() {
 	
 	switchPanel(event, "login");
 	//hide all errors
-	document.getElementById("logoutIcon").style.visibility = "hidden";
-	document.getElementById("errorUsr").style.visibility = "hidden";
-	document.getElementById("errorPass").style.visibility = "hidden";
-	document.getElementById("errorCreateEmail").style.visibility = "hidden";
-	document.getElementById("errorCreateUsr").style.visibility = "hidden";
-	document.getElementById("errorCreatePass").style.visibility = "hidden";
-	document.getElementById("errorCreateConf").style.visibility = "hidden";
-	document.getElementById("errorForgotPass").style.visibility = "hidden";
-	document.getElementById("errorForgotConf").style.visibility = "hidden";
+	var x = document.getElementsByClassName("errorText");
+	for (var i = 0; i < x.length; i++) x[i].style.visibility = "hidden";
 	//setup hard-coded chart
 	initChart();
 	
@@ -44,6 +37,8 @@ function switchPanel(event, panelID) {
 		//reset text fields
 		document.getElementById("loginUsr").value = "";
 		document.getElementById("loginPass").value = "";
+		document.getElementById("errorUsr").style.visibility = "hidden";
+		document.getElementById("errorPass").style.visibility = "hidden";
 	}
 	if (panelID == "createAccount") {
 		//reset text fields
@@ -51,11 +46,17 @@ function switchPanel(event, panelID) {
 		document.getElementById("createUsr").value = "";
 		document.getElementById("createPass").value = "";
 		document.getElementById("createConf").value = "";
+		document.getElementById("errorCreateEmail").style.visibility = "hidden";
+		document.getElementById("errorCreateUsr").style.visibility = "hidden";
+		document.getElementById("errorCreatePass").style.visibility = "hidden";
+		document.getElementById("errorCreateConf").style.visibility = "hidden";
 	}
 	if (panelID == "forgotPassword") {
 		//reset text fields
 		document.getElementById("forgotPass").value = "";
 		document.getElementById("forgotConf").value = "";
+		document.getElementById("errorForgotPass").style.visibility = "hidden";
+		document.getElementById("errorForgotConf").style.visibility = "hidden";
 	}
 	
 }
